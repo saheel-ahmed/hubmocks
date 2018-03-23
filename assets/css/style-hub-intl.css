@@ -1,0 +1,107 @@
+/* Dark Blue: #2E374A, Green: #00D132, Blue: #4E51DF, Red: #E10039 */
+.hub-bg-drak-blue{ background-color: #2E374A; color: #fff; }
+.hub-bg-green{ background-color: #00D132; color: #fff; }
+.hub-bg-blue{ background-color: #4E51DF; color: #fff; }
+.hub-bg-red{ background-color: #E10039; color: #fff; }
+
+.hub-drak-blue{ color: #2E374A; }
+.hub-green{ color: #00D132; }
+.hub-blue{ color: #4E51DF; }
+.hub-red{ color: #E10039; }
+
+h1, h2, h3, h4, h5, h6{   font-weight: 600; }
+
+body.dashboard{ background-color: #fff; }
+
+nav.navbar{ background-color: #2E374A; border-radius: 0px; }
+
+nav.navbar .navbar-header .navbar-brand{
+    display: flex;
+    align-items: center;
+
+    display: -webkit-flex;
+    -webkit-align-items: center;
+}
+
+nav.navbar .navbar-nav li a{
+    color: #fff;
+    transition: 0.4s all;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    font-size: 16px;
+}
+nav.navbar .navbar-nav li a:hover{
+    background-color: transparent;
+    color: #00D132;
+    border-bottom: 2px solid #00D132;
+}
+
+nav.navbar .navbar-toggle{ background-color: rgb(65, 75, 99); }
+nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
+
+.btn{
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600; 
+    font-size: 16px;
+}
+
+.btn-danger{ background-color: #E10039; }
+.btn-danger:hover{ background-color: #d10034; }
+
+.container-tiles{
+    margin-top: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-wrap: wrap;
+}
+
+
+.container-tiles .tile{
+    background-color: #2E374A;
+    margin: 1%;
+    padding: 3% 6%;
+    width: 30%;
+    max-width: 33.33%;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase; 
+}
+@media (max-device-width: 768px) {
+    .container-tiles {
+      flex-direction: column;
+    }
+
+    .container-tiles .tile{
+        margin: 10px;
+        width: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-device-width: 480px) {
+    .container-tiles {
+      flex-direction: column;
+    }
+
+    .container-tiles .tile{
+        margin: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.container-tiles:first-child{ margin-left: 0px; }
+.container-tiles:last-child{ margin-right: 0px; }
+
+.container-tiles .tile i{ font-size: 72px;}
+.container-tiles .tile.hub-green i{ color: #00D132; }
+.container-tiles .tile.hub-blue i{ color: #4E51DF; }
+.container-tiles .tile.hub-red i{ color: #E10039; }
