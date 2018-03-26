@@ -9,7 +9,12 @@
 .hub-blue{ color: #4E51DF; }
 .hub-red{ color: #E10039; }
 
-h1, h2, h3, h4, h5, h6{   font-weight: 600; }
+h1, h2, h3, h4, h5, h6{ font-weight: 600; }
+
+html, body{
+    font-size: 16px;
+    height: 100%;
+}
 
 body.dashboard{ background-color: #fff; }
 
@@ -28,7 +33,7 @@ nav.navbar .navbar-nav li a{
     transition: 0.4s all;
     border-bottom: 2px solid transparent;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
 }
 nav.navbar .navbar-nav li a:hover{
     background-color: transparent;
@@ -43,7 +48,7 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     border-radius: 20px;
     text-transform: uppercase;
     font-weight: 600; 
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .btn-danger{ background-color: #E10039; }
@@ -65,10 +70,9 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 
 .container-tiles .tile{
     background-color: #2E374A;
-    margin: 1%;
+    margin: 0 1.33% 1% 0;
     padding: 3% 6%;
-    width: 30%;
-    max-width: 33.33%;
+    max-width: 32%;
     text-align: center;
     border-radius: 20px;
     color: #fff;
@@ -80,9 +84,7 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     }
 
     .container-tiles .tile{
-        margin: 10px;
-        width: 50%;
-        max-width: 50%;
+        max-width: 48%;
     }
 }
 
@@ -93,7 +95,6 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 
     .container-tiles .tile{
         margin: 10px;
-        width: 100%;
         max-width: 100%;
     }
 }
@@ -101,7 +102,90 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 .container-tiles:first-child{ margin-left: 0px; }
 .container-tiles:last-child{ margin-right: 0px; }
 
-.container-tiles .tile i{ font-size: 72px;}
+.container-tiles .tile i{ font-size: 4.5rem;}
 .container-tiles .tile.hub-green i{ color: #00D132; }
 .container-tiles .tile.hub-blue i{ color: #4E51DF; }
 .container-tiles .tile.hub-red i{ color: #E10039; }
+
+/*media queries
+
+/*Mobile portrait*/
+@media (max-width:480px) {
+	html, body{
+        font-size: 12px;
+    }
+}
+
+/*Mobile landscape*/
+@media (min-width: 481px) and (max-width:599px) {
+	html, body{
+        font-size: 13px;
+    }
+}
+
+/*Small tablet portrait*/
+@media (min-width: 600px) and (max-width: 767px) {
+	html, body{
+        font-size: 13px;
+    }
+}
+
+/*Small tablet landscape*/
+@media (min-width: 768px) and (max-width: 979px) {
+	html, body{
+        font-size: 14px;
+    }
+}
+/*Tablet portrait*/
+@media (min-width:801px) and (max-width:1023px) {
+	html, body{
+        font-size: 15px;
+    }
+}
+
+/*Tablet landscape (1024x768)*/
+@media (min-width: 992px) and (max-width: 1199px){ 
+    html, body{
+        font-size: 16px;
+    }
+}
+
+/*Tablet mobile menu view*/
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
