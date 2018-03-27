@@ -9,13 +9,15 @@
 .hub-blue{ color: #4E51DF; }
 .hub-red{ color: #E10039; }
 
-h1, h2, h3, h4, h5, h6{ font-weight: 600; }
+h1, h2, h3, h4, h5, h6{ font-weight: bolder; }
 
 html, body{
     font-size: 16px;
     height: 100%;
 }
-
+body{
+    padding-top: 80px;
+}
 body.dashboard{ background-color: #fff; }
 
 nav.navbar{ background-color: #2E374A; border-radius: 0px; }
@@ -45,10 +47,11 @@ nav.navbar .navbar-toggle{ background-color: rgb(65, 75, 99); }
 nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 
 .btn{
-    border-radius: 20px;
+    border-radius: 64px;
     text-transform: uppercase;
     font-weight: 600; 
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    padding: 9px 12px; 
 }
 
 .btn-danger{ background-color: #E10039; }
@@ -107,7 +110,104 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 .container-tiles .tile.hub-blue i{ color: #4E51DF; }
 .container-tiles .tile.hub-red i{ color: #E10039; }
 
-/*media queries
+/* Accounts page */
+.account{
+    background-color: #fff;
+    min-height: calc(100vh - 80px);
+    
+}
+
+.search-area{ padding: 1.4rem 0px; }
+
+.search-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+.search-group input[type="search"]{
+    border-radius: 0px; 
+    font-size: .8rem;
+}
+.search-group button{
+    height: 41px;
+}
+
+.search-group::before{
+    content: "\e003";
+    font-family: 'Glyphicons Halflings';
+    position: absolute;
+    z-index: 10;
+    right: 94px;
+    top: 4px;
+    font-size: 1.4rem;
+    color: #4A59DE;
+    transform: scale(-1, 1);
+}
+
+.account .table {
+    font-size: .8rem;
+}
+
+.account .table thead{
+    background-color: #F2F6F0;
+    color: #797979;
+}
+.account .table thead tr th, .account .table tbody tr td{
+    border-bottom: 1px solid #F2F6F0;
+}
+
+.account .table tbody tr td:first-child{
+    font-weight: bold;
+    
+}
+.account .table tbody tr td:first-child a{
+    color: #6D76E6;
+    transition: all 0.4s;
+}
+
+.action-menu > a{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    color: #A9A9A9;
+    position: relative;
+}
+.action-menu > a:hover{
+    text-decoration: none;
+    color: #A9A9A9;
+}
+.action-menu.open > a{
+    text-decoration: none;
+    box-shadow: none !important;
+}
+
+.action-menu.open .dropdown-menu{
+    border-radius: 0px;
+    font-size: .9rem; 
+    min-width: 100px;
+    top:-20px;
+    left:-20px;
+    transition: all 0.4s;
+}
+.action-menu.open .dropdown-menu a{
+    position: relative;
+}
+
+.action-menu > a .badge, .action-menu.open .dropdown-menu a .badge{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    right: -.5rem;
+    font-size: .7rem;
+    background-color: #E10039;
+    top: -.4rem;
+}
+.action-menu.open .dropdown-menu a .badge{
+    position: relative;
+}
+
+/*media queries */
 
 /*Mobile portrait*/
 @media (max-width:480px) {
