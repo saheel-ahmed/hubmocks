@@ -42,6 +42,11 @@ nav.navbar .navbar-nav li a:hover{
     color: #00D132;
     border-bottom: 2px solid #00D132;
 }
+nav.navbar .navbar-nav li a:focus{
+    box-shadow: none;
+    border-radius: 0px; 
+    background-color: transparent;
+}
 
 nav.navbar .navbar-toggle{ background-color: rgb(65, 75, 99); }
 nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
@@ -52,6 +57,23 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     font-weight: 600; 
     font-size: 0.9rem;
     padding: 9px 12px; 
+}
+.btn.btn-xs{
+    font-size: 0.6rem;
+}
+.btn:active,.btn:focus{
+    outline: none;
+}
+
+.btn.btn-info.btn-outline{
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 3px #4E51DF inset;
+    color: #4E51DF;
+    transition: all .4s;
+}
+.btn.btn-info.btn-outline:hover{
+    background-color: #4E51DF;
+    color: #fff;
 }
 
 .btn-danger{ background-color: #E10039; }
@@ -123,7 +145,7 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     position: relative;
     margin-bottom: 20px;
 }
-.search-group input[type="search"]{
+.search-group input[type="text"], .search-group input[type="search"] {
     border-radius: 0px; 
     font-size: .8rem;
 }
@@ -206,6 +228,144 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
 .action-menu.open .dropdown-menu a .badge{
     position: relative;
 }
+
+.account-create{
+    min-height: 100vh;
+    background-color: #fff;
+    padding-bottom: 40px;
+}
+
+.breadcrumb{
+    border-radius: 0px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.breadcrumb .active{
+    color: #fff;
+}
+
+.form-group label{
+    color: #A9A9A9;
+    font-family: "Gotham SSm B",Arial,sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.form-group:focus-within label{
+    color: #4E51DF;
+}
+
+.form-control{
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 2px solid #D6D6D6;  
+    font-size: .8rem;
+    color: #000;
+    padding: 4px 0px;
+    height: 2rem;
+}
+.form-control:focus{
+    box-shadow: none !important;
+    border-bottom: 2px solid #4E51DF;  
+}
+
+#accordion{
+    margin-top: 10px; 
+}
+#accordion .panel{
+    box-shadow: none;
+}
+
+#accordion .panel .panel-heading, #accordion .panel .panel-body {
+    padding: 0;
+    border: none; 
+}
+
+#accordion .panel .panel-heading .panel-title{
+    font-size: 1rem;
+}
+
+#accordion .panel .panel-heading .panel-title a{
+    text-decoration: none;
+    padding-left: 40px;
+    position: relative;
+    min-height: 36px;
+    line-height: 1.5;
+    font-weight: normal;
+    color: #4A59DE;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+
+    transition: all 0.4s;
+}
+#accordion .panel .panel-heading .panel-title a small{
+    display: block;
+    font-size: .7rem;
+    color: #000;
+    transition: all 0.4s;
+}
+
+#accordion .panel .panel-heading .panel-title a[aria-expanded="true"]::before{
+    content: "\2212";
+    position: absolute;
+    font-family: 'Glyphicons Halflings';
+    top: 4px;
+    left: 6px;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    background-color: #4A59DE;
+    color: #fff;
+    border-radius: 50%;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   #accordion .panel .panel-heading .panel-title a[aria-expanded="false"]::before{
+       content: "\002b";
+       position: absolute;
+       font-family: 'Glyphicons Halflings';
+       top: 4px;
+       left: 6px;
+       height: 28px;
+       width: 28px;
+       text-align: center;
+       background-color: #4A59DE;
+       color: #fff;
+       border-radius: 50%;
+       font-size: .9rem;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      }
+   
+      #accordion .panel .panel-heading .panel-title a[aria-expanded="false"]{
+       background-color: #F2F6F0;
+       border-radius: 64px;
+       color: #000;
+    }
+      #accordion .panel .panel-heading .panel-title a[aria-expanded="false"] small{
+          display: none;
+      }
+   
+    #accordion .panel .panel-heading .panel-title a[aria-expanded="true"] small{
+         display: block;
+     }
+
+     .form-action-btns{
+         margin-top: 20px; 
+     }
 
 /*media queries */
 
