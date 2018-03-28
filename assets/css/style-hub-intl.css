@@ -363,6 +363,10 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
          display: block;
      }
 
+     #accordion .panel .panel-body{
+         padding-top: 20px;
+     }
+
      .form-action-btns{
          margin-top: 20px; 
      }
