@@ -258,7 +258,7 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     color: #4E51DF;
 }
 
-.form-control{
+.form-group .form-control{
     border: none;
     box-shadow: none;
     border-radius: 0px;
@@ -268,7 +268,7 @@ nav.navbar .navbar-toggle .icon-bar{ background-color: #fff; }
     padding: 4px 0px;
     height: 2rem;
 }
-.form-control:focus{
+.form-group .form-control:focus{
     box-shadow: none !important;
     border-bottom: 2px solid #4E51DF;  
 }
