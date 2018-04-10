@@ -84,11 +84,11 @@
 
                     <form>
 
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group accordion"  role="tablist" aria-multiselectable="true">
                         <div class="panel">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <a role="button" data-toggle="collapse" data-parent=".accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         General Information
                                         <small>Please fill in the following required information.</small>
                                     </a>
@@ -162,7 +162,7 @@
                         <div class="panel">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent=".accordion" href="#collapseTwo" aria-expanded="false"
                                         aria-controls="collapseTwo">
                                         Additional Information
                                         <small>Please fill in the following required information.</small>
@@ -234,8 +234,161 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
+                    <div class="panel-group accordion"  role="tablist" aria-multiselectable="true">
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="heading3">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent=".accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                        General Information
+                                        <small>Please fill in the following required information.</small>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading3">
+                                <div class="panel-body">
+
+                                    <div class="row">
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="status">Status</label>
+                                            <select name="status" class="form-control">
+                                                <option>Active</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountRegion">Account Region</label>
+                                            <select name="accountRegion" class="form-control">
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="type">Type</label>
+                                            <select name="type" class="form-control">
+                                                <option>Client</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountDivision">Account Division</label>
+                                            <select name="accountDivision" class="form-control">
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" name="name">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="marketSize">Market Size</label>
+                                            <select name="marketSize" class="form-control">
+                                                <option>Small</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="doingBusDBA">Doing Business as (DBA)</label>
+                                            <input type="text" class="form-control" name="doingBusDBA">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountDept">Account Department</label>
+                                            <select name="accountDept" class="form-control">
+                                                <option>BE 02 Small Group</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="inactiveDate">Inactive Date</label>
+                                            <input type="date" class="form-control" name="inactiveDate">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading" role="tab" id="heading4">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent=".accordion" href="#collapse4" aria-expanded="false"
+                                        aria-controls="collapse4">
+                                        Additional Information
+                                        <small>Please fill in the following required information.</small>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                                <div class="panel-body">
+
+                                    <div class="row">
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="status">Status</label>
+                                            <select name="status" class="form-control">
+                                                <option>Active</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountRegion">Account Region</label>
+                                            <select name="accountRegion" class="form-control">
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="type">Type</label>
+                                            <select name="type" class="form-control">
+                                                <option>Client</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountDivision">Account Division</label>
+                                            <select name="accountDivision" class="form-control">
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" name="name">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="marketSize">Market Size</label>
+                                            <select name="marketSize" class="form-control">
+                                                <option>Small</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="doingBusDBA">Doing Business as (DBA)</label>
+                                            <input type="text" class="form-control" name="doingBusDBA">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="accountDept">Account Department</label>
+                                            <select name="accountDept" class="form-control">
+                                                <option>BE 02 Small Group</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="inactiveDate">Inactive Date</label>
+                                            <input type="date" class="form-control" name="inactiveDate">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <h5 class="hub-blue">Selecting Plans or Products?</h5>
                     <div class="radio">
