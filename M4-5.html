@@ -74,68 +74,17 @@
 
                 <div class="table-responsive">
                     <!-- table -->
-                    <!--
-                <table class="table compare">
-                        <thead>
-                            <tr>
-                                <th class="text-left">Compare By</th>
-                                <th class="text-right"></th>
-                                <th class="text-right">Current Plan</th>
-                                <th class="text-right">Renewal Plan</th>
-                                <th class="text-right">Quote Plan A</th>
-                                <th class="text-right">Quote Plan B</th>
-                                <th class="text-right">Quote Plan C</th>
-                                <th class="text-right">Quote Plan D</th>
-                                <th class="text-right">Quote Plan E</th>
-                                <th class="text-right">Quote Plan F</th>
-                                <th class="text-right">Quote Plan G</th>
-                                <th class="text-right">Quote Plan H</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Carrier</td>
-                                <td></td>
-                                <td>United</td>
-                                <td>United</td>
-                                <td>Alliance</td>
-                                <td>Aetno</td>
-                                <td>MetLife</td>
-                                <td>MetLife</td>
-                                <td>MetLife</td>
-                                <td>MetLife</td>
-                                <td>MetLife</td>
-                                <td>MetLife</td>
-                            </tr>
-                            <tr>
-                                <td>Plan Name</td>
-                                <td></td>
-                                <td>PPO1</td>
-                                <td>PPO2</td>
-                                <td>PPOA</td>
-                                <td>PPOab</td>
-                                <td>PPO1abc</td>
-                                <td>PPO1abcd</td>
-                                <td>PPO1abcde</td>
-                                <td>PPO1abcdef</td>
-                                <td>PPO1abcdef</td>
-                                <td>PPO1abcdef</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                -->
 
                     <table class="table compare table-bordered table-striped table-condensed">
                         <thead>
                             <tr>
-                                <th class="text-left">Compare By</th>
-                                <th class="text-right">&nbsp;</th>
-                                <th class="text-right">Current Plan</th>
-                                <th class="text-right">Renewal Plan</th>
-                                <th class="text-right">Quote Plan A</th>
-                                <th class="text-right">Quote Plan B</th>
-                                <th class="text-right">Quote Plan C</th>
+                                <th data-sorter="false" class="text-left">Compare By</th>
+                                <th data-sorter="false" class="text-right">&nbsp;</th>
+                                <th data-sorter="false" class="text-right">Current Plan</th>
+                                <th data-sorter="false" class="text-right">Renewal Plan</th>
+                                <th data-sorter="false" class="text-right">Quote Plan A</th>
+                                <th data-sorter="false" class="text-right">Quote Plan B</th>
+                                <th data-sorter="false" class="text-right">Quote Plan C</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -495,43 +444,7 @@
     </div>
 
     <style>
-        .table.compare tr td {
-            text-align: right;
-            white-space: nowrap;
-            cursor: pointer;
-        }
-
-        .table.compare tbody tr>td:first-child {
-            text-align: left !important;
-        }
-
-        .table.compare tr>td:nth-child(2) {
-            text-align: center !important;
-        }
-
-        .table.compare tr td .btn {
-            padding: 4px 20px;
-            border: none;
-        }
-
-        /* Fixed column scroll bar spacer styling */
-
-        .tablesorter-scroller-bar-spacer {
-            background: #eee;
-        }
-
-        /* add border to right side (LTR pages) of fixed column */
-
-        .tablesorter-scroller-fixed:after {
-            content: '';
-            border-right: 4px solid #dddddd;
-            position: absolute;
-            top: -10px;
-            bottom: 0;
-            z-index: 2;
-            right: 0;
-            margin: 10px 0 18px;
-        }
+        
     </style>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -547,18 +460,6 @@
 
             $('table.compare').tablesorter({
                 theme: 'bootstrap',
-                headers: {
-                    0: { sorter: false },
-                    1: { sorter: false },
-                    2: { sorter: false },
-                    3: { sorter: false },
-                    4: { sorter: false },
-                    5: { sorter: false },
-                    6: { sorter: false },
-                    7: { sorter: false },
-                    8: { sorter: false },
-                    9: { sorter: false }
-                },
                 widgets: ['scroller'],
                 widgetOptions: {
                     // scroll tbody to top after sorting
@@ -578,7 +479,7 @@
             });
 
             $('table.compare tr td').click(function () {
-                if ($(this).index() > 2) {
+				if ($(this).index() > 2 && $(this).text().trim().length > 0 && ($(this).parent().index()+1) < ($(this).parent().parent().find('tr').length-3) ) {
                     if ($(this).hasClass("hub-bg-green")) {
                         $(this).removeAttr('class');
                     } else {

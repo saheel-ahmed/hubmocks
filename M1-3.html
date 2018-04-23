@@ -13,6 +13,7 @@
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="./assets/css/style-hub-intl.css" rel="stylesheet">
+    <link href="./assets/css/theme.bootstrap_3.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -98,7 +99,7 @@
                 </div>
                
                 <!-- table -->
-                <table class="table">
+                <table class="table table-bordered table-condensed table-striped">
                     <thead>
                         <tr>
                             <th class="text-left">Client Name</th>
@@ -111,7 +112,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a href="#">ACME Inc.</a>
+                                <a href="#">ACME1 Inc.</a>
                             </td>
                             <td>2019 Presentation</td>
                             <td>1/1/2018</td>
@@ -194,9 +195,15 @@
     <script src="./assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/jquery.tablesorter.min.js"></script>
+    <script src="./assets/js/jquery.tablesorter.js"></script>
+    <script src="./assets/js/widget/jquery.tablesorter.widgets.js"></script>
     <script>
-         $("table.table").tablesorter({ headers: { 4: { sorter: false } } }); 
+        $("table.table").tablesorter({ 
+            theme : "bootstrap",
+            headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
+             headers: { 4: { sorter: false } } ,
+             widgets : [ "uitheme" ],
+        }); 
     </script>
 </body>
 

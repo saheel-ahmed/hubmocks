@@ -98,7 +98,7 @@ nav.navbar {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9rem;
-    padding: 9px 12px;
+    padding: 8px 20px;
 }
 
     .btn.btn-xs {
@@ -268,46 +268,88 @@ nav.navbar {
             transition: all 0.4s;
         }
 
+.table td .form-group {
+    margin-bottom: 0;
+}
+
+/* Table Sortor */
 th.header,
 th.tablesorter-headerUnSorted {
     cursor: pointer;
 }
 
-    th.header::after,
-    th.tablesorter-headerUnSorted::after {
-        content: "\e150";
-        font-family: 'Glyphicons Halflings';
-        position: absolute;
-        right: 2px;
-        top: 10px;
-        font-size: 10px;
-    }
-
-    th.header.headerSortUp::after,
-    th.tablesorter-headerDesc::after {
-        content: "\e253";
-        font-family: 'Glyphicons Halflings';
-        position: absolute;
-        right: 2px;
-        top: 10px;
-        font-size: 10px;
-    }
-
-    th.header.headerSortDown::after,
-    th.tablesorter-headerAsc::after {
-        content: "\e252";
-        font-family: 'Glyphicons Halflings';
-        position: absolute;
-        right: 2px;
-        top: 10px;
-        font-size: 10px;
-    }
-
 th.tablesorter-header.sorter-false::after {
     content: '';
 }
 
+.tablesorter-header i.tablesorter-icon {
+    font-size: 11px;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    margin-top: -7px; /* half the icon height; older IE doesn't like this */
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    line-height: 14px;
+    display: inline-block;
+    transition: 0.2s all;
+}
 
+.tablesorter-headerUnSorted i {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAA20lEQVR4AWJABpKSkoxALCstLb0aUAsZaCAMhVEY6B0amx8YZWDDEDSBa2AGe7XeIiAAClYwVGBvsAcIllsf/mvcC9DgOOd8h90fxWvngVEUbZIkuWRZZlE8eQjcisgZMM9zi+LJ6ZfwegmWZflZDugdHMfxTcGqql7TNBlUB/QObtv2VBSFrev6OY7jngzFk9OT/fn73fWYpqnlXNyXDMWT0zuYx/Bvel9ej+LJ6R08DMOu67q7DkTkrSA5vYPneV71fX/QASdTkJwezhs0TfMARn0wMDDGXEPgF4oijqwM5YjNAAAAAElFTkSuQmCC');
+}
+
+.tablesorter-headerAsc i {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKJJREFUeNpMjk0KQiEUhVX8GYkgCAltoDbgpHmjZu2iWft4LsAFNA+hpfQ2ELgLzRP66EyO957vHqStNUIpJZD3Ho89YyzWWu/9/SmlNGTgGBkC2HUQQjystVc45lHwE/sDj1LKaIw5dSfDI/bzYDbverBorc8Ae2uFj3lBvsGc8+cEe+Oac77A5wHyDQ4hFKUUvvNOKd2ccy84ZuyRg/sKMAC2oipR0RGqcQAAAABJRU5ErkJggg==');
+    margin-top: -4px !important;
+}
+
+.tablesorter-headerDesc i {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJtJREFUeNpMjLENgiEUhIkJUhFqQqQjDADlX1pR0rGA4zCAA7iINkRLaycheXJEzP+ay9199xgRMWPM1XtP1tq71vrExkHhkaMHd0Axgk1KyZRSG+f8NkANhUeOHtyEa60X59xLCDEHQz8/ZcjRg2N433s/ttbOpZRnjJFCCASFR44e3IRxa5BzfgOGLnA9/cP7QUrpsQcX/BVgANC4XWj0McLEAAAAAElFTkSuQmCC');
+    margin-top: -4px !important;
+}
+
+.sorter-false i {
+    display: none !important;
+}
+
+.table.compare tr td {
+    text-align: right;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.table.compare tbody tr > td:first-child {
+    text-align: left !important;
+}
+
+.table.compare tr > td:nth-child(2) {
+    text-align: center !important;
+}
+
+.table.compare tr td .btn {
+    padding: 4px 20px;
+    border: none;
+}
+
+/* Fixed column scroll bar spacer styling */
+.tablesorter-scroller-bar-spacer {
+    background: #eee;
+}
+
+/* add border to right side (LTR pages) of fixed column */
+.tablesorter-scroller-fixed:after {
+    content: '';
+    border-right: 4px solid #dddddd;
+    position: absolute;
+    top: -10px;
+    bottom: 0;
+    z-index: 2;
+    right: 0;
+    margin: 10px 0 18px;
+    box-shadow: 2px 0px 5px #ddd;
+}
 
 .action-menu > a {
     font-size: 1rem;
@@ -448,7 +490,7 @@ th.tablesorter-header.sorter-false::after {
         box-shadow: none;
     }
 
-        .accordion .panel .panel-heading, 
+        .accordion .panel .panel-heading,
         .accordion .panel .panel-body {
             padding: 0;
             border: none;
@@ -458,7 +500,7 @@ th.tablesorter-header.sorter-false::after {
             padding-top: 20px;
             padding-bottom: 20px;
         }
-         
+
 
         .accordion .panel .panel-heading .panel-title {
             font-size: 1rem;
@@ -471,7 +513,7 @@ th.tablesorter-header.sorter-false::after {
                 min-height: 36px;
                 line-height: 1.5;
                 font-weight: normal;
-                color: #000;
+                color: #4A59DE;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -481,9 +523,8 @@ th.tablesorter-header.sorter-false::after {
                 transition: all 0.4s;
                 margin: 0 !important;
                 padding-bottom: 0px;
-                padding-top:0px;
-                
-                }
+                padding-top: 0px;
+            }
 
 
                 .accordion .panel .panel-heading .panel-title a small {
@@ -720,12 +761,222 @@ tr.group-header.collapsed td i {
 }
 
 /*** tabs ***/
-.tab-content{
+.tab-content {
     border: 1px solid #ddd;
     border-top-width: 0;
     border-radius: 0px 0px 6px 6px;
     padding: 20px;
+    margin-bottom: 20px;
 }
+
+
+/** Contribution page css start **/
+.adjustments {
+    font-size: 12px;
+}
+
+    .adjustments .blue-bar {
+        padding: 10px 0px;
+        margin: 10px 0px;
+        background-color: rgb(29, 119, 213);
+    }
+
+.tabluar {
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}
+
+
+    .tabluar header {
+        border-bottom: 2px solid #ccc;
+        margin: 20px 0px;
+        font-weight: 600;
+        padding: 10px 0px;
+    }
+
+        .tabluar header > div:first-child {
+            margin: 0;
+            padding: 0;
+            color: rgb(29, 119, 213);
+        }
+
+        .tabluar header div:last-child {
+            padding-right: 0px;
+        }
+
+    .tabluar input {
+        font-size: 12px;
+        padding: 2px;
+        line-height: 0;
+        margin: 0;
+        height: auto;
+        border: none;
+        box-shadow: none;
+        border-bottom: 2px solid #0073d6;
+        border-radius: 0;
+    }
+
+        .tabluar input:focus {
+            box-shadow: none;
+        }
+
+    .tabluar section {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 4px;
+    }
+
+        .tabluar section > div {
+            margin-bottom: 14px;
+        }
+
+    .tabluar footer div:first-child {
+        font-weight: bold;
+    }
+
+.premimums {
+    background-color: #e4e4e4;
+    margin: 0px;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+    .premimums div {
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+        font-weight: 500;
+    }
+
+        .premimums div:first-child {
+            text-align: left !important;
+        }
+
+.tabluar .checkbox label {
+    font-weight: 600;
+}
+
+.plan {
+    box-shadow: 0px 2px 20px #a9a9a9;
+    min-height: 286px;
+}
+
+
+    .plan .panel-heading {
+        background-color: #2E374A;
+        color: #fff;
+    }
+
+    .plan.renewal .panel-heading {
+        background-color: rgb(29, 119, 213);
+    }
+
+    .plan .panel-heading h6,
+    .plan .panel-heading h4 {
+        margin: 0;
+        padding: 4px 0;
+        text-transform: uppercase;
+    }
+
+    .plan.renewal .panel-heading h6 {
+        color: #000;
+    }
+
+    .plan .list-group .list-group-item h6,
+    .plan .list-group .list-group-item h3 {
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .plan .list-group .list-group-item h6 {
+        color: #9c9c9c;
+        font-size: 12px;
+    }
+
+    .plan li.list-group-item {
+        border-bottom: 2px solid #ddd !important;
+        border-radius: 0px !important;
+    }
+
+    .plan.renewal li.list-group-item:last-child {
+        border-bottom-width: 0 !important;
+        border-bottom-right-radius: 3px !important;
+        border-bottom-left-radius: 3px !important;
+    }
+
+    .plan.renewal .list-group-item h3.up::after {
+        content: "\e253";
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        bottom: 10px;
+        margin-left: 6px;
+        font-size: 20px;
+        position: absolute;
+        color: #E10039;
+    }
+
+.contribution-tabular-list {
+    display: flex;
+    min-height: 290px;
+    align-items: flex-end;
+    font-size: 12px;
+}
+
+    .contribution-tabular-list .tabular-list {
+        overflow: auto;
+        width: 80%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .contribution-tabular-list .fix-cols {
+        width: 20%;
+    }
+
+        .contribution-tabular-list .fix-cols ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 18px;
+        }
+
+            .contribution-tabular-list .fix-cols ul li {
+                padding: 10px;
+                text-align: right;
+                font-weight: bold;
+                color: #000;
+            }
+
+    .contribution-tabular-list .tabular-list > div {
+        margin: 0px 10px;
+        background: #fff;
+        min-width: 320px;
+        text-align: center;
+    }
+
+    .contribution-tabular-list .tabular-list .text-bold {
+        font-weight: bold;
+    }
+
+    .contribution-tabular-list .tabular-list > div div.row {
+        padding: 10px 6px;
+        margin: 0;
+    }
+
+    .contribution-tabular-list .tabular-list > div:first-child {
+        min-width: 60px;
+        text-align: center;
+    }
+
+    .contribution-tabular-list .tabular-list h5 {
+        font-size: 14px;
+    }
+
+    .contribution-tabular-list .tabular-list > div div.row:nth-child(odd) {
+        background-color: #f6f6f6;
+    }
+
+/** Contribution page css end **/
 
 /********** media queries ****************/
 /*Mobile portrait*/
