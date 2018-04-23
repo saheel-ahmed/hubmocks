@@ -772,12 +772,32 @@ tr.group-header.collapsed td i {
     html, body {
         font-size: 13px;
     }
+	.container-tiles {
+        flex-direction: column;
+    }
+
+        .container-tiles .tile {
+            margin: 10px;
+            max-width: 50%;
+			min-height: 0px;
+			flex: auto;
+        }
 }
 /*Tablet portrait*/
 @media (min-width:801px) and (max-width:1023px) {
     html, body {
         font-size: 13px;
     }
+	.container-tiles {
+        flex-direction: column;
+    }
+
+        .container-tiles .tile {
+            margin: 10px;
+            max-width: 50%;
+			min-height: 0px;
+			flex: auto;
+        }
 }
 
 /*Tablet landscape (1024x768)*/
