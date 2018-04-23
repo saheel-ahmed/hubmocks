@@ -984,6 +984,13 @@ tr.group-header.collapsed td i {
     html, body {
         font-size: 12px;
     }
+	.container-tiles{
+		flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+	.container-tiles div{
+		max-width: 100%;
+	}
 }
 
 /*Mobile landscape*/
@@ -991,6 +998,14 @@ tr.group-header.collapsed td i {
     html, body {
         font-size: 13px;
     }
+	
+	.container-tiles{
+		flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+	.container-tiles div{
+		max-width: 100%;
+	}
 }
 
 /*Small tablet portrait*/
