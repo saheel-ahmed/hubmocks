@@ -744,7 +744,7 @@ tr.group-header.collapsed td i {
 
         .container-tiles .tile {
             margin: 10px;
-            max-width: 100%;
+            max-width: 60%;
 			min-height: 0px;
 			flex: auto;
         }
