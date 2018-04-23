@@ -65,6 +65,10 @@ nav.navbar {
         -webkit-align-items: center;
 		max-width: 150px;
     }
+	
+	nav.navbar .navbar-header .navbar-brand img{
+		width: 100%;
+	}
 
     nav.navbar .navbar-nav li a {
         color: #fff;
