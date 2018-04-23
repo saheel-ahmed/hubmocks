@@ -177,7 +177,8 @@ nav.navbar {
         .container-tiles .tile {
             margin: 10px;
             max-width: 100%;
-			min-height: 0;
+			min-height: 0px;
+			flex: auto;
         }
 }
 
