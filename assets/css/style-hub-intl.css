@@ -758,20 +758,20 @@ tr.group-header.collapsed td i {
 /*Small tablet landscape*/
 @media (min-width: 768px) and (max-width: 979px) {
     html, body {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 /*Tablet portrait*/
 @media (min-width:801px) and (max-width:1023px) {
     html, body {
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
 /*Tablet landscape (1024x768)*/
 @media (min-width: 992px) and (max-width: 1199px) {
     html, body {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 
