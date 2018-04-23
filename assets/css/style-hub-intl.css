@@ -63,6 +63,7 @@ nav.navbar {
         align-items: center;
         display: -webkit-flex;
         -webkit-align-items: center;
+		max-width: 150px;
     }
 
     nav.navbar .navbar-nav li a {
