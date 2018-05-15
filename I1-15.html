@@ -111,6 +111,7 @@
                                             <th class="text-left">Has Rate Info?</th>
                                             <th class="text-left">Display Name</th>
                                             <th class="text-left">In Model</th>
+											<th class="text-left">In Current</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -123,7 +124,10 @@
                                             </td>
                                             <td>BCBSIL PPO</td>
                                             <td>
-                                                <input type="checkbox" checked />
+                                                <input id="1_InModel" name="_InModel" type="checkbox" />
+                                            </td>
+											<td>
+                                                <input id="1_IsCurrent" name="_IsCurrent" type="checkbox" disabled />
                                             </td>
                                         </tr>
                                         <tr>
@@ -135,7 +139,10 @@
                                             </td>
                                             <td>BCBSIL HMO</td>
                                             <td>
-                                                <input type="checkbox" />
+                                                <input id="2_InModel" name="_InModel" type="checkbox" />
+                                            </td>
+											<td>
+                                                <input id="2_IsCurrent" name="_IsCurrent" type="checkbox" disabled />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -244,6 +251,7 @@
                 <div class="form-action-btns row">
                     <div class="col-xs-12 text-center">
                         <button type="button" class="btn btn-info btn-outline">Save</button>
+						<button type="button" class="btn btn-info btn-outline" id="btnCompare" disabled>Compare</button>
                         <button type="button" class="btn btn-info">Cancel</button>
                     </div>
                 </div>
@@ -264,10 +272,61 @@
 
 
     <script>
-
+		var isPageSettingsChanged = false;
+		
         $(document).ready(function () {
 
         });
+		
+		$(document).on('change', 'input[type="checkbox"][name*=InModel]', function () {
+            var isCurrent = $(this).parent().parent().find('input[type="checkbox"][name*=IsCurrent]');
+            $(isCurrent).prop('disabled', !($(this).prop('checked')));
+            if (!$(this).prop('checked')) {
+                $(isCurrent).prop('checked', false);
+            }
+
+            //IsChanged Property Set/Unset
+            setTimeout(function () { fnCheckIsChnaged(); fnEnCmpBtn(); },100);
+            
+        });
+
+        $(document).on('change', 'input[type="checkbox"][name*=IsCurrent]', function () {
+            var curChkBoxId = $(this).attr('id');
+            $('input[type="checkbox"][name*=IsCurrent]').each(function (_index, _cb) {
+                if (curChkBoxId != $(_cb).attr('id')) {
+                    $(_cb).prop('checked', false);
+                }
+            });
+
+            //IsChanged Property Set/Unset
+            setTimeout(function () { fnCheckIsChnaged(); fnEnCmpBtn(); }, 100);
+        });
+
+        function fnCheckIsChnaged() {
+
+            $('table.bp > tbody tr').each(function (_tIndex, _tr) {
+                var _isStateChanged = false;
+                $(_tr).find("[data-prev-state]").each(function (_index, _cb) {
+                    console.log($(_cb).data('prev-state'), $(_cb).prop('checked'), ($(_cb).prop('checked') ? "True" : "False"));
+                    if (!($(_cb).data('prev-state') === ($(_cb).prop('checked') ? "True" : "False"))) {
+                        _isStateChanged = true;
+                    }
+                });
+
+                $(_tr).find('input[type="hidden"][name*=IsChanged]').val(_isStateChanged);
+
+            });
+
+        }
+		
+		//btnCompare
+		function fnEnCmpBtn(){
+			if( $('input[type="checkbox"][name*=IsCurrent]:checked').length === 1 )
+				$("#btnCompare").prop('disabled', false);
+			else
+				$("#btnCompare").prop('disabled', true);
+		}
+		
     </script>
 </body>
 
